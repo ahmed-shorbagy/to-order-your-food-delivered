@@ -1,14 +1,36 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from 'react-helmet-async';
+import { Navbar } from '@/components/Navbar';
+import { HeroSection } from '@/components/HeroSection';
+import { FeaturesSection } from '@/components/FeaturesSection';
+import { ArticlesSection } from '@/components/ArticlesSection';
+import { DownloadSection } from '@/components/DownloadSection';
+import { Footer } from '@/components/Footer';
 
-const Index = () => {
+export default function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
-  );
-};
+    <>
+      <Helmet>
+        <title>To Order | Food Delivery Made Simple</title>
+        <meta
+          name="description"
+          content="Order your favorite meals delivered in minutes. The all-in-one platform for food lovers, restaurant owners, and delivery partners."
+        />
+        <meta property="og:title" content="To Order | Food Delivery Made Simple" />
+        <meta
+          property="og:description"
+          content="Order your favorite meals delivered in minutes. The all-in-one platform for food lovers, restaurant owners, and delivery partners."
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
 
-export default Index;
+      <Navbar />
+      <main>
+        <HeroSection />
+        <FeaturesSection />
+        <ArticlesSection />
+        <DownloadSection />
+      </main>
+      <Footer />
+    </>
+  );
+}
