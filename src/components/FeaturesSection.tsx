@@ -18,70 +18,70 @@ import {
 const tabs = [
   {
     id: 'customers',
-    label: 'For Customers',
+    label: 'للعملاء',
     icon: Users,
     color: 'from-primary to-secondary',
     features: [
       {
         icon: MapPin,
-        title: 'Real-time Tracking',
-        description: 'Track your order live from restaurant to doorstep with precision GPS tracking.',
+        title: 'تتبع مباشر',
+        description: 'تابع طلبك لحظة بلحظة من المطعم لباب بيتك بدقة عالية.',
       },
       {
         icon: Percent,
-        title: 'Massive Discounts',
-        description: 'Enjoy exclusive deals, cashback offers, and loyalty rewards on every order.',
+        title: 'خصومات ضخمة',
+        description: 'استمتع بعروض حصرية وكاش باك ومكافآت ولاء على كل طلب.',
       },
       {
         icon: Smartphone,
-        title: 'Seamless Experience',
-        description: 'Intuitive interface for quick browsing, ordering, and secure payments.',
+        title: 'تجربة سلسة',
+        description: 'واجهة سهلة الاستخدام للتصفح السريع والطلب والدفع الآمن.',
       },
     ],
   },
   {
     id: 'restaurants',
-    label: 'For Restaurants',
+    label: 'للمطاعم',
     icon: Store,
     color: 'from-secondary to-primary',
     features: [
       {
         icon: Menu,
-        title: 'Menu Management',
-        description: 'Easily update your menu, prices, and availability in real-time.',
+        title: 'إدارة القائمة',
+        description: 'حدّث قائمتك وأسعارك وتوفر المنتجات في الوقت الفعلي بسهولة.',
       },
       {
         icon: BarChart3,
-        title: 'Unified Treasury',
-        description: 'Track all your earnings, payouts, and analytics in one dashboard.',
+        title: 'خزينة موحدة',
+        description: 'تتبع جميع إيراداتك ومدفوعاتك وتحليلاتك في لوحة تحكم واحدة.',
       },
       {
         icon: Building2,
-        title: 'Grow Your Business',
-        description: 'Reach thousands of new customers and expand your delivery radius.',
+        title: 'نمّي عملك',
+        description: 'وصل لآلاف العملاء الجدد ووسّع نطاق توصيلك.',
       },
     ],
   },
   {
     id: 'drivers',
-    label: 'For Drivers',
+    label: 'للسائقين',
     icon: Bike,
     color: 'from-primary to-secondary',
     features: [
       {
         icon: Clock,
-        title: 'Flexible Hours',
-        description: 'Work on your own schedule. Be your own boss and earn when you want.',
+        title: 'ساعات مرنة',
+        description: 'اشتغل على جدولك الخاص. كن رئيس نفسك واكسب وقت ما تحب.',
       },
       {
         icon: Bell,
-        title: 'Instant Notifications',
-        description: 'Get real-time order alerts with optimized routes for faster deliveries.',
+        title: 'إشعارات فورية',
+        description: 'احصل على تنبيهات طلبات مباشرة مع مسارات محسّنة لتوصيل أسرع.',
       },
       {
         icon: Wallet,
-        title: 'Reliable Earnings',
-        description: 'Transparent pay structure with weekly payouts and bonus incentives.',
+        title: 'أرباح موثوقة',
+        description: 'هيكل دفع شفاف مع تحويلات أسبوعية وحوافز إضافية.',
       },
     ],
   },
@@ -95,8 +95,8 @@ export function FeaturesSection() {
   return (
     <section id="features" className="section-padding bg-background relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto container-padding relative z-10">
         {/* Header */}
@@ -107,11 +107,10 @@ export function FeaturesSection() {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Built for <span className="gradient-text">Everyone</span>
+            مصمم <span className="gradient-text">للجميع</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Whether you're hungry, running a restaurant, or delivering joy – we've got the
-            perfect solution for you.
+            سواء كنت جوعان، تدير مطعم، أو توصّل الفرحة – عندنا الحل المثالي لك.
           </p>
         </motion.div>
 

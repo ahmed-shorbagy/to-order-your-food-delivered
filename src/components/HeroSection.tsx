@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { ChevronRight, Star } from 'lucide-react';
-import appMockup from '@/assets/app-mockup.png';
+import { ChevronLeft, Star } from 'lucide-react';
+import appScreenshot from '@/assets/app-screenshot-1.jpeg';
 
 export function HeroSection() {
   const scrollToDownload = () => {
@@ -16,19 +16,19 @@ export function HeroSection() {
     >
       {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+        <div className="absolute top-20 right-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
       <div className="container mx-auto container-padding relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          {/* Left Content */}
+          {/* Right Content (Text - RTL) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-center lg:text-left"
+            className="text-center lg:text-right order-2 lg:order-1"
           >
             {/* Badge */}
             <motion.div
@@ -39,23 +39,23 @@ export function HeroSection() {
             >
               <Star className="w-4 h-4 text-primary fill-primary" />
               <span className="text-sm font-medium text-foreground">
-                Rated #1 Food Delivery App
+                التطبيق رقم #1 لتوصيل الطعام
               </span>
             </motion.div>
 
             {/* Headline */}
             <h1 className="font-display font-bold text-4xl sm:text-5xl lg:text-6xl xl:text-7xl text-foreground leading-tight mb-6">
-              Order Your{' '}
-              <span className="gradient-text">Favorites</span>,{' '}
-              <br className="hidden sm:block" />
-              Delivered in{' '}
-              <span className="gradient-text">Minutes</span>
+              الاختيار{' '}
+              <span className="gradient-text">الصح</span>
+              <br />
+              يبدأ من{' '}
+              <span className="gradient-text">هنا</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 mb-8">
-              The all-in-one platform for food lovers, restaurant owners, and
-              delivery partners. Experience seamless ordering today.
+            <p className="text-lg sm:text-xl text-muted-foreground max-w-xl mx-auto lg:mx-0 lg:mr-0 mb-8">
+              المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل.
+              اطلب وجباتك المفضلة وتوصل في دقائق.
             </p>
 
             {/* CTA Buttons */}
@@ -65,8 +65,8 @@ export function HeroSection() {
                 size="lg"
                 className="gradient-primary text-white font-semibold px-8 py-6 text-lg shadow-green-lg hover:shadow-green transition-all duration-300 hover:-translate-y-1"
               >
-                Download App
-                <ChevronRight className="ml-2 w-5 h-5" />
+                <ChevronLeft className="ml-2 w-5 h-5" />
+                حمّل التطبيق
               </Button>
               <Button
                 variant="outline"
@@ -78,7 +78,7 @@ export function HeroSection() {
                 }
                 className="border-2 border-primary/30 text-foreground font-semibold px-8 py-6 text-lg hover:bg-primary/5 hover:border-primary/50 transition-all duration-300"
               >
-                Learn More
+                اعرف أكثر
               </Button>
             </div>
 
@@ -90,9 +90,9 @@ export function HeroSection() {
               className="flex flex-wrap gap-8 justify-center lg:justify-start mt-12"
             >
               {[
-                { value: '50K+', label: 'Active Users' },
-                { value: '1000+', label: 'Restaurants' },
-                { value: '4.9', label: 'App Rating' },
+                { value: '+50 ألف', label: 'مستخدم نشط' },
+                { value: '+1000', label: 'مطعم' },
+                { value: '4.9', label: 'تقييم التطبيق' },
               ].map((stat) => (
                 <div key={stat.label}>
                   <div className="font-display font-bold text-2xl sm:text-3xl gradient-text">
@@ -104,27 +104,27 @@ export function HeroSection() {
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Phone Mockup */}
+          {/* Left Content - Phone Mockup */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center lg:justify-start order-1 lg:order-2"
           >
             <div className="relative">
               {/* Floating elements */}
               <motion.div
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                className="absolute -top-8 -left-8 glass-card p-4 shadow-soft-lg"
+                className="absolute -top-8 -right-8 glass-card p-4 shadow-soft-lg z-10"
               >
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 rounded-full gradient-primary flex items-center justify-center">
                     <span className="text-white text-lg">🍕</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-sm text-foreground">Order Placed!</p>
-                    <p className="text-xs text-muted-foreground">Arriving in 15 min</p>
+                    <p className="font-semibold text-sm text-foreground">تم الطلب!</p>
+                    <p className="text-xs text-muted-foreground">يوصل خلال 15 دقيقة</p>
                   </div>
                 </div>
               </motion.div>
@@ -132,10 +132,10 @@ export function HeroSection() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-                className="absolute -bottom-4 -right-8 glass-card p-4 shadow-soft-lg"
+                className="absolute -bottom-4 -left-8 glass-card p-4 shadow-soft-lg z-10"
               >
                 <div className="flex items-center gap-3">
-                  <div className="flex -space-x-2">
+                  <div className="flex -space-x-2 space-x-reverse">
                     {['🍔', '🌮', '🍜'].map((emoji, i) => (
                       <div
                         key={i}
@@ -145,17 +145,17 @@ export function HeroSection() {
                       </div>
                     ))}
                   </div>
-                  <p className="text-sm font-medium text-foreground">+500 dishes</p>
+                  <p className="text-sm font-medium text-foreground">+500 طبق</p>
                 </div>
               </motion.div>
 
-              {/* Phone mockup */}
+              {/* Phone mockup with actual app screenshot */}
               <div className="relative w-[280px] sm:w-[320px] lg:w-[380px]">
                 <div className="absolute inset-0 gradient-primary rounded-[3rem] blur-2xl opacity-30" />
                 <img
-                  src={appMockup}
-                  alt="To Order App Interface showing food ordering screen with pizza and green button"
-                  className="relative w-full h-auto drop-shadow-2xl"
+                  src={appScreenshot}
+                  alt="تطبيق تو اوردر - واجهة طلب الطعام"
+                  className="relative w-full h-auto rounded-3xl shadow-2xl"
                 />
               </div>
             </div>

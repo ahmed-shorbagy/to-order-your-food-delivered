@@ -10,15 +10,15 @@ export default function Index() {
   return (
     <>
       <Helmet>
-        <title>To Order | Food Delivery Made Simple</title>
+        <title>تو اوردر | توصيل الطعام بسهولة</title>
         <meta
           name="description"
-          content="Order your favorite meals delivered in minutes. The all-in-one platform for food lovers, restaurant owners, and delivery partners."
+          content="اطلب وجباتك المفضلة وتوصل في دقائق. المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل."
         />
-        <meta property="og:title" content="To Order | Food Delivery Made Simple" />
+        <meta property="og:title" content="تو اوردر | توصيل الطعام بسهولة" />
         <meta
           property="og:description"
-          content="Order your favorite meals delivered in minutes. The all-in-one platform for food lovers, restaurant owners, and delivery partners."
+          content="اطلب وجباتك المفضلة وتوصل في دقائق. المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل."
         />
         <meta property="og:type" content="website" />
       </Helmet>
