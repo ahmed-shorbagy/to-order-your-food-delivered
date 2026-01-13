@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Calendar, User } from 'lucide-react';
+import { ArrowLeft, Calendar, User } from 'lucide-react';
 import { getArticles, Article } from '@/lib/supabase';
 import { Skeleton } from '@/components/ui/skeleton';
 
@@ -9,32 +9,32 @@ import { Skeleton } from '@/components/ui/skeleton';
 const fallbackArticles: Article[] = [
   {
     id: '1',
-    title: 'How To Order is Revolutionizing Food Delivery',
-    content: 'Discover how our platform is changing the way people order food...',
+    title: 'كيف يُحدث تو اوردر ثورة في توصيل الطعام',
+    content: 'اكتشف كيف تغير منصتنا طريقة طلب الناس للطعام...',
     image_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
-    author: 'Sarah Johnson',
+    author: 'سارة أحمد',
     created_at: '2024-01-15T10:00:00Z',
   },
   {
     id: '2',
-    title: '5 Tips for Restaurant Owners to Boost Online Orders',
-    content: 'Learn the best strategies to increase your restaurant\'s delivery sales...',
+    title: '5 نصائح لأصحاب المطاعم لزيادة الطلبات',
+    content: 'تعلم أفضل الاستراتيجيات لزيادة مبيعات التوصيل في مطعمك...',
     image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
-    author: 'Michael Chen',
+    author: 'محمد علي',
     created_at: '2024-01-12T14:30:00Z',
   },
   {
     id: '3',
-    title: 'The Future of Food Delivery: What to Expect in 2025',
-    content: 'Explore the upcoming trends that will shape the food delivery industry...',
+    title: 'مستقبل توصيل الطعام: ماذا نتوقع في 2025',
+    content: 'استكشف الاتجاهات القادمة التي ستشكل صناعة توصيل الطعام...',
     image_url: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop',
-    author: 'Emily Watson',
+    author: 'نورة السعيد',
     created_at: '2024-01-10T09:15:00Z',
   },
 ];
 
 function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-US', {
+  return new Date(dateString).toLocaleDateString('ar-EG', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -83,8 +83,8 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
 
             {/* Read more */}
             <span className="inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:gap-3 transition-all">
-              Read Article
-              <ArrowRight className="w-4 h-4" />
+              اقرأ المقال
+              <ArrowLeft className="w-4 h-4" />
             </span>
           </div>
         </div>
@@ -126,8 +126,8 @@ export function ArticlesSection() {
   return (
     <section id="articles" className="section-padding bg-muted/30 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-1/2 left-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 right-0 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto container-padding relative z-10">
         {/* Header */}
@@ -138,10 +138,10 @@ export function ArticlesSection() {
           className="text-center max-w-3xl mx-auto mb-12"
         >
           <h2 className="font-display font-bold text-3xl sm:text-4xl lg:text-5xl text-foreground mb-4">
-            Latest <span className="gradient-text">Articles</span>
+            أحدث <span className="gradient-text">المقالات</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Stay updated with the latest news, tips, and insights from the food delivery world.
+            تابع آخر الأخبار والنصائح والرؤى من عالم توصيل الطعام.
           </p>
         </motion.div>
 
@@ -166,8 +166,8 @@ export function ArticlesSection() {
               to="/articles"
               className="inline-flex items-center gap-2 gradient-primary text-white font-semibold px-8 py-4 rounded-xl shadow-green hover:shadow-green-lg transition-all duration-300 hover:-translate-y-1"
             >
-              View All Articles
-              <ArrowRight className="w-5 h-5" />
+              عرض جميع المقالات
+              <ArrowLeft className="w-5 h-5" />
             </Link>
           </motion.div>
         )}

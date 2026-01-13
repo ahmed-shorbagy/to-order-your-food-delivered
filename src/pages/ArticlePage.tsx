@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
 import { getArticleById, Article } from '@/lib/supabase';
 import { Navbar } from '@/components/Navbar';
@@ -12,33 +12,33 @@ import { Button } from '@/components/ui/button';
 // Fallback article for demo
 const fallbackArticle: Article = {
   id: '1',
-  title: 'How To Order is Revolutionizing Food Delivery',
+  title: 'كيف يُحدث تو اوردر ثورة في توصيل الطعام',
   content: `
-    <p>The food delivery industry has undergone a massive transformation in recent years, and To Order is at the forefront of this revolution. Our platform bridges the gap between hungry customers, talented restaurant owners, and dedicated delivery partners.</p>
+    <p>شهدت صناعة توصيل الطعام تحولاً هائلاً في السنوات الأخيرة، وتو اوردر في طليعة هذه الثورة. منصتنا تسد الفجوة بين العملاء الجائعين وأصحاب المطاعم الموهوبين وشركاء التوصيل المتفانين.</p>
     
-    <h2>The Problem We Solved</h2>
-    <p>Traditional food delivery services often left one or more parties unsatisfied. Customers faced long wait times and limited options. Restaurants struggled with high commission fees. Delivery partners dealt with unclear earnings and inflexible schedules.</p>
+    <h2>المشكلة التي حللناها</h2>
+    <p>غالباً ما تركت خدمات توصيل الطعام التقليدية طرفاً أو أكثر غير راضٍ. العملاء واجهوا أوقات انتظار طويلة وخيارات محدودة. المطاعم عانت من رسوم عمولة عالية. شركاء التوصيل تعاملوا مع أرباح غير واضحة وجداول غير مرنة.</p>
     
-    <h2>Our Solution</h2>
-    <p>To Order was built from the ground up with all three stakeholders in mind:</p>
+    <h2>حلنا</h2>
+    <p>تم بناء تو اوردر من الصفر مع مراعاة جميع الأطراف الثلاثة:</p>
     <ul>
-      <li><strong>For Customers:</strong> Real-time tracking, curated restaurant selections, and unbeatable prices with our loyalty program.</li>
-      <li><strong>For Restaurants:</strong> A unified treasury system for transparent earnings, easy menu management, and marketing tools to grow their business.</li>
-      <li><strong>For Drivers:</strong> Flexible working hours, instant notifications, and reliable weekly payouts with bonus incentives.</li>
+      <li><strong>للعملاء:</strong> تتبع في الوقت الفعلي، اختيارات مطاعم منسقة، وأسعار لا تُضاهى مع برنامج الولاء.</li>
+      <li><strong>للمطاعم:</strong> نظام خزينة موحد لأرباح شفافة، إدارة قائمة سهلة، وأدوات تسويق لتنمية أعمالهم.</li>
+      <li><strong>للسائقين:</strong> ساعات عمل مرنة، إشعارات فورية، ومدفوعات أسبوعية موثوقة مع حوافز إضافية.</li>
     </ul>
     
-    <h2>Looking Ahead</h2>
-    <p>We're constantly innovating to make food delivery faster, more affordable, and more sustainable. From AI-powered route optimization to eco-friendly packaging initiatives, To Order is committed to leading the industry forward.</p>
+    <h2>نظرة للمستقبل</h2>
+    <p>نحن نبتكر باستمرار لجعل توصيل الطعام أسرع وأقل تكلفة وأكثر استدامة. من تحسين المسارات بالذكاء الاصطناعي إلى مبادرات التغليف الصديق للبيئة، تو اوردر ملتزم بقيادة الصناعة للأمام.</p>
     
-    <p>Join us on this journey. Download the app today and experience the difference.</p>
+    <p>انضم إلينا في هذه الرحلة. حمّل التطبيق اليوم واختبر الفرق.</p>
   `,
   image_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop',
-  author: 'Sarah Johnson',
+  author: 'سارة أحمد',
   created_at: '2024-01-15T10:00:00Z',
 };
 
 function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('en-US', {
+  return new Date(dateString).toLocaleDateString('ar-EG', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -97,13 +97,13 @@ export default function ArticlePage() {
         <main className="pt-24 pb-16 min-h-screen flex items-center justify-center">
           <div className="text-center">
             <h1 className="font-display font-bold text-3xl text-foreground mb-4">
-              Article Not Found
+              المقال غير موجود
             </h1>
             <p className="text-muted-foreground mb-8">
-              The article you're looking for doesn't exist.
+              المقال الذي تبحث عنه غير موجود.
             </p>
             <Button onClick={() => navigate('/')} className="gradient-primary text-white">
-              Go Back Home
+              العودة للرئيسية
             </Button>
           </div>
         </main>
@@ -117,7 +117,7 @@ export default function ArticlePage() {
   return (
     <>
       <Helmet>
-        <title>{article.title} | To Order Blog</title>
+        <title>{article.title} | مدونة تو اوردر</title>
         <meta
           name="description"
           content={article.content.replace(/<[^>]*>/g, '').substring(0, 155)}
@@ -137,7 +137,7 @@ export default function ArticlePage() {
         <article className="container mx-auto container-padding max-w-4xl">
           {/* Back Button */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="mb-8"
           >
@@ -145,8 +145,8 @@ export default function ArticlePage() {
               to="/#articles"
               className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors font-medium"
             >
-              <ArrowLeft className="w-4 h-4" />
-              Back to Articles
+              <ArrowRight className="w-4 h-4" />
+              العودة للمقالات
             </Link>
           </motion.div>
 
@@ -172,7 +172,7 @@ export default function ArticlePage() {
               </time>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
-                {readTime} min read
+                {readTime} دقائق قراءة
               </span>
             </div>
           </motion.header>
@@ -208,16 +208,16 @@ export default function ArticlePage() {
             className="mt-16 p-8 rounded-2xl gradient-primary text-center shadow-green-lg"
           >
             <h3 className="font-display font-bold text-2xl text-white mb-4">
-              Ready to experience To Order?
+              جاهز تجرب تو اوردر؟
             </h3>
             <p className="text-white/90 mb-6">
-              Download the app and get your first order delivered in minutes.
+              حمّل التطبيق واحصل على أول طلب يوصلك في دقائق.
             </p>
             <Link
               to="/#download"
               className="inline-flex items-center justify-center bg-white text-foreground font-bold px-8 py-4 rounded-xl hover:bg-white/90 transition-colors"
             >
-              Download Now
+              حمّل الآن
             </Link>
           </motion.div>
         </article>

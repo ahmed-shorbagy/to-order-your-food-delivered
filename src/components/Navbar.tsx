@@ -3,12 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from '@/assets/logo.jpeg';
 
 const navLinks = [
-  { name: 'Home', href: '/#home' },
-  { name: 'Features', href: '/#features' },
-  { name: 'Articles', href: '/#articles' },
-  { name: 'Download', href: '/#download' },
+  { name: 'الرئيسية', href: '/#home' },
+  { name: 'المميزات', href: '/#features' },
+  { name: 'المقالات', href: '/#articles' },
+  { name: 'تحميل', href: '/#download' },
 ];
 
 export function Navbar() {
@@ -50,12 +51,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl gradient-primary flex items-center justify-center shadow-green">
-              <span className="text-white font-bold text-lg">T</span>
-            </div>
-            <span className="font-display font-bold text-xl text-foreground">
-              To Order
-            </span>
+            <img src={logo} alt="تو اوردر" className="h-10 md:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -77,7 +73,7 @@ export function Navbar() {
               onClick={() => handleNavClick('/#download')}
               className="gradient-primary text-white font-semibold px-6 shadow-green hover:shadow-green-lg transition-all duration-300 hover:-translate-y-0.5"
             >
-              Download App
+              حمّل التطبيق
             </Button>
           </div>
 
@@ -104,7 +100,7 @@ export function Navbar() {
                   <button
                     key={link.name}
                     onClick={() => handleNavClick(link.href)}
-                    className="block w-full text-left py-2 text-foreground font-medium"
+                    className="block w-full text-right py-2 text-foreground font-medium"
                   >
                     {link.name}
                   </button>
@@ -113,7 +109,7 @@ export function Navbar() {
                   onClick={() => handleNavClick('/#download')}
                   className="w-full gradient-primary text-white font-semibold shadow-green mt-4"
                 >
-                  Download App
+                  حمّل التطبيق
                 </Button>
               </div>
             </motion.div>
