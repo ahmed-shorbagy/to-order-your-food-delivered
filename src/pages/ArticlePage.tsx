@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { getArticleById, Article } from '@/lib/supabase';
+import { getArticleById, Article } from '@/lib/firebase';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -32,13 +32,15 @@ const fallbackArticle: Article = {
     
     <p>انضم إلينا في هذه الرحلة. حمّل التطبيق اليوم واختبر الفرق.</p>
   `,
-  image_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop',
+  imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop',
   author: 'سارة أحمد',
-  created_at: '2024-01-15T10:00:00Z',
+  isPublished: true,
+  createdAt: new Date('2024-01-15T10:00:00Z'),
+  updatedAt: new Date('2024-01-15T10:00:00Z'),
 };
 
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('ar-EG', {
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('ar-EG', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -127,7 +129,7 @@ export default function ArticlePage() {
           property="og:description"
           content={article.content.replace(/<[^>]*>/g, '').substring(0, 155)}
         />
-        <meta property="og:image" content={article.image_url} />
+        <meta property="og:image" content={article.imageUrl || ''} />
         <meta property="og:type" content="article" />
       </Helmet>
 
@@ -166,9 +168,9 @@ export default function ArticlePage() {
                 <User className="w-4 h-4" />
                 {article.author}
               </span>
-              <time dateTime={article.created_at} className="flex items-center gap-2">
+              <time dateTime={article.createdAt.toISOString()} className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                {formatDate(article.created_at)}
+                {formatDate(article.createdAt)}
               </time>
               <span className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
@@ -185,7 +187,7 @@ export default function ArticlePage() {
             className="mb-10"
           >
             <img
-              src={article.image_url}
+              src={article.imageUrl || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&h=600&fit=crop'}
               alt={article.title}
               className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-2xl shadow-soft-lg"
             />

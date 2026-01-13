@@ -2,39 +2,45 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
-import { getArticles, Article } from '@/lib/supabase';
+import { getArticles, Article } from '@/lib/firebase';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// Fallback articles if Supabase data is unavailable
+// Fallback articles if Firebase data is unavailable
 const fallbackArticles: Article[] = [
   {
     id: '1',
     title: 'كيف يُحدث تو اوردر ثورة في توصيل الطعام',
     content: 'اكتشف كيف تغير منصتنا طريقة طلب الناس للطعام...',
-    image_url: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop',
     author: 'سارة أحمد',
-    created_at: '2024-01-15T10:00:00Z',
+    isPublished: true,
+    createdAt: new Date('2024-01-15T10:00:00Z'),
+    updatedAt: new Date('2024-01-15T10:00:00Z'),
   },
   {
     id: '2',
     title: '5 نصائح لأصحاب المطاعم لزيادة الطلبات',
     content: 'تعلم أفضل الاستراتيجيات لزيادة مبيعات التوصيل في مطعمك...',
-    image_url: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&h=400&fit=crop',
     author: 'محمد علي',
-    created_at: '2024-01-12T14:30:00Z',
+    isPublished: true,
+    createdAt: new Date('2024-01-12T14:30:00Z'),
+    updatedAt: new Date('2024-01-12T14:30:00Z'),
   },
   {
     id: '3',
     title: 'مستقبل توصيل الطعام: ماذا نتوقع في 2025',
     content: 'استكشف الاتجاهات القادمة التي ستشكل صناعة توصيل الطعام...',
-    image_url: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop',
+    imageUrl: 'https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&h=400&fit=crop',
     author: 'نورة السعيد',
-    created_at: '2024-01-10T09:15:00Z',
+    isPublished: true,
+    createdAt: new Date('2024-01-10T09:15:00Z'),
+    updatedAt: new Date('2024-01-10T09:15:00Z'),
   },
 ];
 
-function formatDate(dateString: string): string {
-  return new Date(dateString).toLocaleDateString('ar-EG', {
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('ar-EG', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
@@ -55,7 +61,7 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
           {/* Image */}
           <div className="relative h-52 overflow-hidden">
             <img
-              src={article.image_url}
+              src={article.imageUrl || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&h=400&fit=crop'}
               alt={article.title}
               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
             />
@@ -70,9 +76,9 @@ function ArticleCard({ article, index }: { article: Article; index: number }) {
                 <User className="w-4 h-4" />
                 {article.author}
               </span>
-              <time dateTime={article.created_at} className="flex items-center gap-1.5">
+              <time dateTime={article.createdAt.toISOString()} className="flex items-center gap-1.5">
                 <Calendar className="w-4 h-4" />
-                {formatDate(article.created_at)}
+                {formatDate(article.createdAt)}
               </time>
             </div>
 
@@ -150,8 +156,8 @@ export function ArticlesSection() {
           {loading
             ? Array.from({ length: 3 }).map((_, i) => <ArticleSkeleton key={i} />)
             : articles.slice(0, 6).map((article, index) => (
-                <ArticleCard key={article.id} article={article} index={index} />
-              ))}
+              <ArticleCard key={article.id} article={article} index={index} />
+            ))}
         </div>
 
         {/* View All Link */}
