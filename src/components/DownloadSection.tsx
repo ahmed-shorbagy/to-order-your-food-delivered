@@ -10,14 +10,8 @@ const apps = [
     description: 'اطلب وجباتك المفضلة من أي مكان',
     icon: Smartphone,
     color: 'from-primary to-secondary',
-  },
-  {
-    id: 'restaurant',
-    name: 'تو اوردر أدمن',
-    subtitle: 'للمطاعم',
-    description: 'إدارة عمليات مطعمك بسهولة',
-    icon: Store,
-    color: 'from-secondary to-primary',
+    playStoreLink: 'https://play.google.com/store/apps/details?id=com.toorder.customer&pcampaignid=web_share',
+    appStoreLink: null, // Coming Soon
   },
   {
     id: 'driver',
@@ -26,6 +20,8 @@ const apps = [
     description: 'ابدأ الكسب على جدولك الخاص',
     icon: Bike,
     color: 'from-primary to-secondary',
+    playStoreLink: null, // Coming Soon
+    appStoreLink: null, // Coming Soon
   },
 ];
 
@@ -94,20 +90,45 @@ export function DownloadSection() {
 
                   {/* Store Buttons */}
                   <div className="flex gap-3 justify-center">
-                    <a
-                      href="#"
-                      className="flex items-center justify-center gap-2 bg-foreground text-background py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity"
-                    >
-                      <Apple className="w-5 h-5" />
-                      <span className="hidden sm:inline">App Store</span>
-                    </a>
-                    <a
-                      href="#"
-                      className="flex items-center justify-center gap-2 bg-foreground text-background py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity"
-                    >
-                      <Play className="w-5 h-5 fill-current" />
-                      <span className="hidden sm:inline">Play Store</span>
-                    </a>
+                    {app.appStoreLink ? (
+                      <a
+                        href={app.appStoreLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 bg-foreground text-background py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity"
+                      >
+                        <Apple className="w-5 h-5" />
+                        <span className="hidden sm:inline">App Store</span>
+                      </a>
+                    ) : (
+                      <button
+                        className="flex items-center justify-center gap-2 bg-foreground/50 text-background/80 py-3 px-4 rounded-xl font-semibold text-sm cursor-not-allowed"
+                        disabled
+                      >
+                        <Apple className="w-5 h-5" />
+                        <span className="hidden sm:inline">قريباً</span>
+                      </button>
+                    )}
+
+                    {app.playStoreLink ? (
+                      <a
+                        href={app.playStoreLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-center gap-2 bg-foreground text-background py-3 px-4 rounded-xl font-semibold text-sm hover:opacity-90 transition-opacity"
+                      >
+                        <Play className="w-5 h-5 fill-current" />
+                        <span className="hidden sm:inline">Play Store</span>
+                      </a>
+                    ) : (
+                      <button
+                        className="flex items-center justify-center gap-2 bg-foreground/50 text-background/80 py-3 px-4 rounded-xl font-semibold text-sm cursor-not-allowed"
+                        disabled
+                      >
+                        <Play className="w-5 h-5 fill-current" />
+                        <span className="hidden sm:inline">قريباً</span>
+                      </button>
+                    )}
                   </div>
                 </div>
               </motion.div>
@@ -134,15 +155,17 @@ export function DownloadSection() {
               انضم لآلاف العملاء السعداء وشركاء المطاعم والسائقين اليوم.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="#"
-                className="inline-flex items-center justify-center gap-3 bg-white text-foreground py-4 px-8 rounded-xl font-bold text-lg hover:bg-white/90 transition-colors shadow-lg"
+              <button
+                className="inline-flex items-center justify-center gap-3 bg-white/50 text-foreground/50 py-4 px-8 rounded-xl font-bold text-lg cursor-not-allowed shadow-none"
+                disabled
               >
                 <Apple className="w-6 h-6" />
-                تحميل لـ iOS
-              </a>
+                قريباً على iOS
+              </button>
               <a
-                href="#"
+                href="https://play.google.com/store/apps/details?id=com.toorder.customer&pcampaignid=web_share"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-3 bg-white/20 text-white border-2 border-white/30 py-4 px-8 rounded-xl font-bold text-lg hover:bg-white/30 transition-colors"
               >
                 <Play className="w-6 h-6 fill-current" />
