@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram, MapPin, Mail, Phone } from 'lucide-react';
 import logo from '@/assets/logo.jpeg';
 
 const socialLinks = [
-  { name: 'Facebook', icon: Facebook, href: '#' },
-  { name: 'Instagram', icon: Instagram, href: '#' },
-  { name: 'X', icon: Twitter, href: '#' },
+  { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/share/1D3rsenPDy/?mibextid=wwXIfr' },
+  { name: 'Instagram', icon: Instagram, href: 'https://www.instagram.com/toorder_egy?igsh=MXJuNXIzZTFzYjBjZA%3D%3D&utm_source=qr' },
 ];
 
 const footerLinks = [
   { name: 'الرئيسية', href: '/' },
+  { name: 'من نحن', href: '/about' },
   { name: 'المميزات', href: '/#features' },
   { name: 'المقالات', href: '/#articles' },
   { name: 'تحميل', href: '/#download' },
@@ -18,6 +18,8 @@ const footerLinks = [
 const legalLinks = [
   { name: 'شروط الخدمة', href: '/terms' },
   { name: 'سياسة الخصوصية', href: '/privacy' },
+  { name: 'سياسة التوصيل والشحن', href: '/delivery-policy' },
+  { name: 'سياسة الاسترداد والإلغاء', href: '/refund-policy' },
 ];
 
 export function Footer() {
@@ -34,6 +36,27 @@ export function Footer() {
               المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل.
               اختبر مستقبل توصيل الطعام اليوم.
             </p>
+
+            {/* Contact Info */}
+            <div className="space-y-4 mb-8">
+              <div className="flex items-center gap-3 text-white/80">
+                <MapPin className="w-5 h-5 text-primary" />
+                <span>مدينة الشروق، القاهرة، مصر</span>
+              </div>
+              <div className="flex items-center gap-3 text-white/80">
+                <Mail className="w-5 h-5 text-primary" />
+                <a href="mailto:toorderegy@gmail.com" className="hover:text-primary transition-colors">
+                  toorderegy@gmail.com
+                </a>
+              </div>
+              <div className="flex items-center gap-3 text-white/80">
+                <Phone className="w-5 h-5 text-primary" />
+                <a href="tel:+201021087933" className="hover:text-primary transition-colors" dir="ltr">
+                  +201021087933
+                </a>
+              </div>
+            </div>
+
             {/* Social Links */}
             <div className="flex gap-4">
               {socialLinks.map((social) => {
