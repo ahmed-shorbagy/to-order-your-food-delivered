@@ -16,7 +16,6 @@ const footerLinks = [
 ];
 
 const legalLinks = [
-  { name: 'شروط الخدمة', href: '/terms' },
   { name: 'سياسة الخصوصية', href: '/privacy' },
   { name: 'سياسة التوصيل والشحن', href: '/delivery-policy' },
   { name: 'سياسة الاسترداد والإلغاء', href: '/refund-policy' },
