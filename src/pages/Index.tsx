@@ -21,6 +21,19 @@ export default function Index() {
           content="اطلب وجباتك المفضلة وتوصل في دقائق. المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل."
         />
         <meta property="og:type" content="website" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "To Order",
+            "url": "https://www.toorder.info",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://www.toorder.info/search?q={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navbar />

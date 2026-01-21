@@ -131,6 +131,34 @@ export default function ArticlePage() {
         />
         <meta property="og:image" content={article.imageUrl || ''} />
         <meta property="og:type" content="article" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "image": [article.imageUrl],
+            "datePublished": article.createdAt.toISOString(),
+            "dateModified": article.updatedAt.toISOString(),
+            "author": [{
+              "@type": "Person",
+              "name": article.author || "To Order Team",
+              "url": "https://www.toorder.info"
+            }],
+            "publisher": {
+              "@type": "Organization",
+              "name": "تو اوردر | To Order",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://toorder.app/og-image.jpeg"
+              }
+            },
+            "description": article.content.replace(/<[^>]*>/g, '').substring(0, 155),
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://toorder.app/article/${article.id}`
+            }
+          })}
+        </script>
       </Helmet>
 
       <Navbar />
