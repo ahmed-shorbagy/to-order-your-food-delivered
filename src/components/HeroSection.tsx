@@ -83,25 +83,7 @@ export function HeroSection() {
             </div>
 
             {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-              className="flex flex-wrap gap-8 justify-center lg:justify-start mt-12"
-            >
-              {[
-                { value: '+50 ألف', label: 'مستخدم نشط' },
-                { value: '+1000', label: 'مطعم' },
-                { value: '4.9', label: 'تقييم التطبيق' },
-              ].map((stat) => (
-                <div key={stat.label}>
-                  <div className="font-display font-bold text-2xl sm:text-3xl gradient-text">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
-            </motion.div>
+
           </motion.div>
 
           {/* Left Content - Phone Mockup */}

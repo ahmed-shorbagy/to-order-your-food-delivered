@@ -10,7 +10,7 @@ const apps = [
     description: 'اطلب وجباتك المفضلة من أي مكان',
     icon: Smartphone,
     color: 'from-primary to-secondary',
-    playStoreLink: 'https://play.google.com/store/apps/details?id=com.toorder.customer&pcampaignid=web_share',
+    playStoreLink: null, // Coming Soon
     appStoreLink: null, // Coming Soon
   },
   {
@@ -162,15 +162,13 @@ export function DownloadSection() {
                 <Apple className="w-6 h-6" />
                 قريباً على iOS
               </button>
-              <a
-                href="https://play.google.com/store/apps/details?id=com.toorder.customer&pcampaignid=web_share"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-3 bg-white/20 text-white border-2 border-white/30 py-4 px-8 rounded-xl font-bold text-lg hover:bg-white/30 transition-colors"
+              <button
+                className="inline-flex items-center justify-center gap-3 bg-white/50 text-foreground/50 py-4 px-8 rounded-xl font-bold text-lg cursor-not-allowed shadow-none"
+                disabled
               >
                 <Play className="w-6 h-6 fill-current" />
-                تحميل لـ Android
-              </a>
+                قريباً على Android
+              </button>
             </div>
           </div>
         </motion.div>
