@@ -22,17 +22,50 @@ export default function Index() {
         />
         <meta property="og:type" content="website" />
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "To Order",
-            "url": "https://www.toorder.info",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://www.toorder.info/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "To Order",
+              "url": "https://www.toorder.info",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://www.toorder.info/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "To Order",
+              "url": "https://www.toorder.info",
+              "logo": "https://www.toorder.info/favicon.ico",
+              "description": "تو اوردر | المنصة الشاملة لتوصيل الطعام",
+              "sameAs": [
+                "https://facebook.com/toorder",
+                "https://twitter.com/ToOrder",
+                "https://instagram.com/toorder"
+              ]
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "الرئيسية",
+                  "item": "https://www.toorder.info"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "المقالات",
+                  "item": "https://www.toorder.info/#articles"
+                }
+              ]
             }
-          })}
+          ])}
         </script>
       </Helmet>
 

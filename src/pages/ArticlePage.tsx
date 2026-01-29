@@ -132,32 +132,58 @@ export default function ArticlePage() {
         <meta property="og:image" content={article.imageUrl || ''} />
         <meta property="og:type" content="article" />
         <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": article.title,
-            "image": [article.imageUrl],
-            "datePublished": article.createdAt.toISOString(),
-            "dateModified": article.updatedAt.toISOString(),
-            "author": [{
-              "@type": "Person",
-              "name": article.author || "To Order Team",
-              "url": "https://www.toorder.info"
-            }],
-            "publisher": {
-              "@type": "Organization",
-              "name": "تو اوردر | To Order",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://toorder.app/og-image.jpeg"
+          {JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "Article",
+              "headline": article.title,
+              "image": [article.imageUrl],
+              "datePublished": article.createdAt.toISOString(),
+              "dateModified": article.updatedAt.toISOString(),
+              "author": [{
+                "@type": "Person",
+                "name": article.author || "To Order Team",
+                "url": "https://www.toorder.info"
+              }],
+              "publisher": {
+                "@type": "Organization",
+                "name": "تو اوردر | To Order",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.toorder.info/favicon.ico"
+                }
+              },
+              "description": article.content.replace(/<[^>]*>/g, '').substring(0, 155),
+              "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": `https://www.toorder.info/article/${article.id}`
               }
             },
-            "description": article.content.replace(/<[^>]*>/g, '').substring(0, 155),
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": `https://toorder.app/article/${article.id}`
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "الرئيسية",
+                  "item": "https://www.toorder.info"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "المقالات",
+                  "item": "https://www.toorder.info/#articles"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": article.title,
+                  "item": `https://www.toorder.info/article/${article.id}`
+                }
+              ]
             }
-          })}
+          ])}
         </script>
       </Helmet>
 
