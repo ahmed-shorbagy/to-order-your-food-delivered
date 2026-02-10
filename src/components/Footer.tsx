@@ -110,13 +110,32 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-white/50 text-sm">
-            © 2024 تو اوردر. جميع الحقوق محفوظة.
-          </p>
-          <p className="text-white/50 text-sm">
-            صُنع بـ 💚 لعشاق الطعام في كل مكان
-          </p>
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col lg:flex-row justify-between items-center gap-8">
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-8">
+            <p className="text-white/50 text-sm">
+              © 2024 تو اوردر. جميع الحقوق محفوظة.
+            </p>
+            <p className="text-white/50 text-sm">
+              صُنع بـ 💚 لعشاق الطعام في كل مكان
+            </p>
+          </div>
+
+          <div className="flex flex-col items-center lg:items-end gap-1 select-none">
+            <span className="text-white/30 text-[10px] uppercase tracking-[0.2em]">Developed by</span>
+            <a
+              href="https://devosoftware.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center lg:items-end group cursor-pointer transition-all duration-300 hover:scale-105 active:scale-95"
+            >
+              <span className="text-2xl font-bold tracking-tighter leading-none text-white group-hover:text-primary transition-colors">
+                DEVO
+              </span>
+              <span className="text-[9px] font-medium uppercase tracking-[0.3em] text-white/60 leading-none mt-1">
+                Software Services
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
