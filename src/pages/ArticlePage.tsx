@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowRight, Calendar, User, Clock } from 'lucide-react';
 import { Helmet } from 'react-helmet-async';
-import { getArticleById, Article } from '@/lib/firebase';
+import { getArticleById, Article } from '@/lib/articles';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Skeleton } from '@/components/ui/skeleton';
@@ -252,7 +252,7 @@ export default function ArticlePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-li:text-muted-foreground"
+            className="prose prose-lg max-w-none prose-headings:font-display prose-headings:font-bold prose-headings:text-foreground prose-p:text-muted-foreground prose-a:text-primary prose-strong:text-foreground prose-li:text-muted-foreground text-lg leading-8 text-muted-foreground [&_p]:mb-5 [&_h2]:mt-10 [&_h2]:mb-4 [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:text-foreground [&_h3]:mt-8 [&_h3]:mb-3 [&_h3]:text-xl [&_h3]:font-bold [&_h3]:text-foreground [&_h4]:mt-6 [&_h4]:mb-2 [&_h4]:font-bold [&_h4]:text-foreground [&_ul]:mb-5 [&_ul]:list-disc [&_ul]:ps-6 [&_ol]:mb-5 [&_ol]:list-decimal [&_ol]:ps-6 [&_li]:mb-2 [&_strong]:text-foreground [&_a]:text-primary [&_a]:underline [&_img]:my-6 [&_img]:rounded-2xl [&_blockquote]:border-s-4 [&_blockquote]:border-primary [&_blockquote]:ps-4 [&_blockquote]:italic"
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
 

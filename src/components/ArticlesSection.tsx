@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, User } from 'lucide-react';
-import { getArticles, Article } from '@/lib/firebase';
+import { getArticles, Article } from '@/lib/articles';
 import { Skeleton } from '@/components/ui/skeleton';
 
-// Fallback articles if Firebase data is unavailable
+// Shown while no article is published yet (admin → Marketing → Articles)
 const fallbackArticles: Article[] = [
   {
     id: '1',

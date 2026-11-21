@@ -19,20 +19,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.toorder.info/article/1</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.toorder.info/article/2</loc>
-    <lastmod>2026-01-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.toorder.info/article/3</loc>
-    <lastmod>2026-01-24</lastmod>
+    <loc>https://www.toorder.info/article/to-order-smart-saving</loc>
+    <lastmod>2026-01-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
