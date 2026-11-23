@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Facebook, Instagram, MapPin, Mail, Phone } from 'lucide-react';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo-ar-on-dark.svg';
 
 const socialLinks = [
   { name: 'Facebook', icon: Facebook, href: 'https://www.facebook.com/share/1D3rsenPDy/?mibextid=wwXIfr' },
@@ -29,7 +29,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="تو اوردر" className="h-12 w-auto brightness-0 invert" />
+              <img src={logo} alt="تو اوردر" className="h-10 w-auto" />
             </Link>
             <p className="text-white/70 max-w-md mb-6 leading-relaxed">
               المنصة الشاملة لعشاق الطعام وأصحاب المطاعم وشركاء التوصيل.

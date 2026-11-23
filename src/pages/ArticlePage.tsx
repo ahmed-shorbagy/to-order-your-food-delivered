@@ -150,7 +150,7 @@ export default function ArticlePage() {
                 "name": "تو اوردر | To Order",
                 "logo": {
                   "@type": "ImageObject",
-                  "url": "https://www.toorder.info/favicon.ico"
+                  "url": "https://www.toorder.info/logo.png"
                 }
               },
               "description": article.content.replace(/<[^>]*>/g, '').substring(0, 155),

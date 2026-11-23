@@ -39,7 +39,7 @@ export default function Index() {
               "@type": "Organization",
               "name": "To Order",
               "url": "https://www.toorder.info",
-              "logo": "https://www.toorder.info/favicon.ico",
+              "logo": "https://www.toorder.info/logo.png",
               "description": "تو اوردر | المنصة الشاملة لتوصيل الطعام",
               "sameAs": [
                 "https://facebook.com/toorder",

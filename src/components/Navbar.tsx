@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '@/assets/logo.jpeg';
+import logo from '@/assets/logo-ar.svg';
 
 const navLinks = [
   { name: 'الرئيسية', href: '/#home' },
@@ -51,7 +51,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2">
-            <img src={logo} alt="تو اوردر" className="h-10 md:h-12 w-auto" />
+            <img src={logo} alt="تو اوردر" className="h-8 md:h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

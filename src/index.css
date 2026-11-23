@@ -8,11 +8,11 @@
 
 @layer base {
   :root {
-    /* Brand Colors - Green Identity */
-    --primary: 151 76% 62%; /* #53E88B */
-    --primary-foreground: 270 60% 7%; /* Dark text on primary */
+    /* Brand colours: To Order orange (brand/build.py in the to-order repo) */
+    --primary: 17 79% 50%; /* #E4531B */
+    --primary-foreground: 0 0% 100%;
     
-    --secondary: 157 83% 45%; /* #12D18E */
+    --secondary: 15 90% 38%; /* #B8360A */
     --secondary-foreground: 0 0% 100%;
     
     /* Core Colors */
@@ -25,46 +25,46 @@
     --popover: 0 0% 100%;
     --popover-foreground: 270 60% 7%;
     
-    --muted: 150 30% 96%;
+    --muted: 30 25% 96%;
     --muted-foreground: 270 20% 40%;
     
-    --accent: 151 76% 95%;
+    --accent: 21 100% 95%; /* #FFF0E8 */
     --accent-foreground: 270 60% 7%;
     
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
     
-    --border: 150 20% 90%;
-    --input: 150 20% 90%;
-    --ring: 151 76% 62%;
+    --border: 30 15% 90%;
+    --input: 30 15% 90%;
+    --ring: 17 79% 50%;
     
     --radius: 1rem;
     
     /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(151 76% 62%) 0%, hsl(157 83% 45%) 100%);
-    --gradient-primary-soft: linear-gradient(135deg, hsl(151 76% 62% / 0.1) 0%, hsl(157 83% 45% / 0.1) 100%);
-    --gradient-hero: linear-gradient(180deg, hsl(150 30% 98%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-primary: linear-gradient(135deg, hsl(19 100% 62%) 0%, hsl(17 79% 50%) 55%, hsl(15 90% 38%) 100%);
+    --gradient-primary-soft: linear-gradient(135deg, hsl(19 100% 62% / 0.1) 0%, hsl(15 90% 38% / 0.1) 100%);
+    --gradient-hero: linear-gradient(180deg, hsl(30 40% 98%) 0%, hsl(0 0% 100%) 100%);
     
     /* Glassmorphism */
     --glass-bg: hsl(0 0% 100% / 0.7);
     --glass-border: hsl(0 0% 100% / 0.5);
-    --glass-shadow: 0 8px 32px hsl(151 76% 62% / 0.12);
+    --glass-shadow: 0 8px 32px hsl(17 79% 50% / 0.12);
     
     /* Shadows */
     --shadow-sm: 0 2px 8px hsl(270 60% 7% / 0.04);
     --shadow-md: 0 4px 16px hsl(270 60% 7% / 0.08);
     --shadow-lg: 0 8px 32px hsl(270 60% 7% / 0.12);
-    --shadow-green: 0 8px 32px hsl(151 76% 62% / 0.3);
-    --shadow-green-lg: 0 16px 48px hsl(151 76% 62% / 0.4);
+    --shadow-green: 0 8px 32px hsl(17 79% 50% / 0.28);
+    --shadow-green-lg: 0 16px 48px hsl(17 79% 50% / 0.36);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 151 76% 62%;
+    --sidebar-primary: 17 79% 50%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 150 30% 96%;
+    --sidebar-accent: 30 25% 96%;
     --sidebar-accent-foreground: 270 60% 7%;
-    --sidebar-border: 150 20% 90%;
-    --sidebar-ring: 151 76% 62%;
+    --sidebar-border: 30 15% 90%;
+    --sidebar-ring: 17 79% 50%;
   }
 }
 
